@@ -32,6 +32,7 @@ router.delete('/users',authenticate,users.destroy)
 
 router.post('/products',authenticate,authorise,upload.array('photos',5),products.create)
 router.get('/products',products.read)
+router.get('/product_by_cat',products.readByCategory)
 router.put('/products',authenticate,authorise,upload.array('photos',5),products.update)
 router.delete('/products',authenticate,authorise,products.destroy)
 

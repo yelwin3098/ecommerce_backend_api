@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 
 //db configuration - establishing connection to db
 mongoose.Promise = global.Promise // we are setting the mongoose.promise as global es6 promise . i.e we will use Promises, as operations from backend to db are async
-mongoose.connect('mongodb://localhost:27017/e-commerce', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/e-commerce-backend-api', { useNewUrlParser: true })
     .then(() => {
         console.log('successfully connected to db')
     })

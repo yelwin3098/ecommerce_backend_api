@@ -1,6 +1,7 @@
 const Cart = require("../models/cart")
 const Product = require('../models/products')
 
+
 const findAndConstructOrder = function(req, res, next) {
 	req.body.orderNumber = Number(Date.now())
 	const userId = req.user._id

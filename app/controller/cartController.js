@@ -14,6 +14,7 @@ module.exports.create = (req,res) => {
 module.exports.read = (req, res) => {
     const userId = req.user._id
     Cart.find({userId})
+        .populate('productId')
         .then(items => {
             res.send(items)
         })
