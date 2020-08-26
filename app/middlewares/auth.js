@@ -14,13 +14,16 @@ const authenticate = function (req, res, next) {
             }
             else {
                 res.status('401').send({ notice: 'token not available' })
+                res.redirect('/admin/login')
             }
         })
         .catch((err) => {
             res.status('401').send(err)
+            res.redirect('/admin/login')
         })
     }else{
         res.status('401').send({ error: 'token not available' })
+        res.redirect('/admin/login')
     }
 }
 
@@ -32,6 +35,7 @@ const authorise  = function(req,res,next){
         res.status('403').send({
             error: 'User not authorised'
         })
+        res.redirect('/admin/login')
     }
 }
 

@@ -1,0 +1,106 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title E-Commerce 
+    //- #{title}
+    // Font Awesome Icons
+    link(rel='stylesheet', href='/plugins/fontawesome-free/css/all.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // summernote
+    link(rel='stylesheet', href='/plugins/summernote/summernote-bs4.css')
+    // overlayScrollbars
+    link(rel='stylesheet', href='/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')
+    // DataTables
+    link(rel='stylesheet', href='/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')
+    link(rel='stylesheet', href='/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')
+    // Theme style
+    link(rel='stylesheet', href='/dist/css/adminlte.min.css')
+    // Google Font: Source Sans Pro
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700', rel='stylesheet')
+  body.hold-transition.sidebar-mini.layout-fixed.layout-navbar-fixed.layout-footer-fixed
+    .wrapper
+      include nav
+      // /.navbar
+      // Main Sidebar Container
+      include sidebar
+      block content
+      // Main Footer
+      include footer
+      
+    // jQuery
+    script(src='/plugins/jquery/jquery.min.js')
+    // Bootstrap
+    script(src='/plugins/bootstrap/js/bootstrap.bundle.min.js')
+
+    // overlayScrollbars
+    script(src='/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')
+    // AdminLTE App
+    script(src='/dist/js/adminlte.js')
+    // OPTIONAL SCRIPTS
+    script(src='/dist/js/demo.js')
+    // PAGE PLUGINS
+    // jQuery Mapael
+    script(src='/plugins/jquery-mousewheel/jquery.mousewheel.js')
+    script(src='/plugins/raphael/raphael.min.js')
+    script(src='/plugins/jquery-mapael/jquery.mapael.min.js')
+    script(src='/plugins/jquery-mapael/maps/usa_states.min.js')
+    // ChartJS
+    script(src='/plugins/chart.js/Chart.min.js')
+    // PAGE SCRIPTS
+    script(src='/dist/js/pages/dashboard2.js')
+    // DataTables
+    script(src='/plugins/datatables/jquery.dataTables.min.js')
+    script(src='/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')
+    script(src='/plugins/datatables-responsive/js/dataTables.responsive.min.js')
+    script(src='/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')
+    // bs-custom-file-input
+    script(src='/plugins/bs-custom-file-input/bs-custom-file-input.min.js')
+    //- script(src='/dist/tagsinput.js')
+    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    //- script(src='http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')
+
+    // Summernote
+    script(src='/plugins/summernote/summernote-bs4.min.js')
+    script.
+      $(document).ready(function () {
+        bsCustomFileInput.init();
+      });
+      $(function () {
+      // Summernote
+        $('.textarea').summernote()
+      })
+      
+    script.
+      $(document).ready(function () {
+        setTimeout(function () {
+          $('.auto-hide').slideUp(300);
+          }, 2000)
+      });
+      $(function () {
+        $("#example1").DataTable({
+          "responsive": true,
+          "autoWidth": false,
+        });
+      });
+    //- script.
+    //-   const inpFile = document.getElementById("inpFile");
+    //-   const previewContainer = document.getElementById("imagePreview");
+    //-   const previewImage = previewContainer.querySelector(".image-preview__image");
+    //-   const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+    //-   inpFile.addEventListener("change", function () {
+    //-   const file = this.files[0];
+    //-   if (file) {
+    //-     const reader = new FileReader();
+    //-     previewDefaultText.style.display = "none";
+    //-     previewImage.style.display = "block";
+    //-     reader.addEventListener("load", function () {
+    //-     console.log(this);
+    //-     previewImage.setAttribute("src", this.result);
+    //-     });
+    //-     reader.readAsDataURL(file);
+    //-   }
+    //-   });

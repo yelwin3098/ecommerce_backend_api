@@ -9,7 +9,7 @@
          type:String,
          required:true
      }
- })
+ },{ timestamps: {} })
 
  const Category = mongoose.model('Category',categorySchema)
  module.exports = Category

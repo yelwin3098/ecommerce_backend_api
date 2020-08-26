@@ -1,0 +1,61 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+        // Brand Logo
+        a.brand-link(href='/admin/dashboard')
+          img.brand-image.img-circle.elevation-3(src='/dist/img/AdminLTELogo.png', alt='AdminLTE Logo', style='opacity: .8')
+          span.brand-text.font-weight-light E-Commerce Admin
+        // Sidebar
+        .sidebar
+          // Sidebar Menu
+          nav.mt-2
+            ul.nav.nav-pills.nav-sidebar.flex-column(data-widget='treeview', role='menu', data-accordion='false')
+              li.nav-item
+                    a.nav-link(href='/admin/dashboard')
+                      i.nav-icon.fas.fa-home
+                      p  Dashboard
+              li.nav-item.has-treeview
+                a.nav-link(href='#')
+                  p
+                    | General
+                    i.fas.fa-angle-left.right
+                ul.nav.nav-treeview
+                  li.nav-item
+                    a.nav-link(href='/admin/company_info')
+                      i.nav-icon.fas.fa-info
+                      p  Company
+                  li.nav-item
+                    a.nav-link(href='/admin/category_create')
+                      i.nav-icon.fas.fa-layer-group
+                      p  Category
+                  li.nav-item
+                    a.nav-link(href='/admin/product_list')
+                      i.fas.fa-dice-d6.nav-icon
+                      p Product
+              li.nav-item.has-treeview
+                a.nav-link(href='#')
+                  p
+                    | Order
+                    i.fas.fa-angle-left.right
+                ul.nav.nav-treeview
+                  li.nav-item
+                    a.nav-link(href='/admin/order_list')
+                      i.fas.fa-shopping-cart.nav-icon
+                      p  Order List
+                  li.nav-item
+                    a.nav-link(href='/admin/order_accepted')
+                      i.fas.fa-money-check.nav-icon
+                      p Order Accepted
+              li.nav-item.has-treeview
+                a.nav-link(href='#')
+                  p
+                    | Customer
+                    i.fas.fa-angle-left.right
+                ul.nav.nav-treeview
+                  li.nav-item
+                    a.nav-link(href='/admin/customer_list')
+                      i.nav-icon.fas.fa-users
+                      p  Customer List
+                  li.nav-item
+                    a.nav-link(href='/admin/accounts')
+                      i.fas.fa-address-card.nav-icon
+                      p Account & Address
+              

@@ -39,7 +39,7 @@ const userSchema = new Schema({
             }
         }
     ]
-})
+},{ timestamps: {} })
 
 userSchema.pre('save',function(next) {
     const user = this

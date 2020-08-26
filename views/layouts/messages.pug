@@ -1,0 +1,13 @@
+.container
+    if (success_message.length > 0)
+        .alert.alert-success.alert-dismissible.fade.show.mt-2.auto-hide(role='alert')
+          strong
+            | #{success_message}
+          button.close(type='button', data-dismiss='alert', alert-lable='Close')
+            span(aria-hidden='true') X
+    if (error_message.length > 0)
+        .alert.alert-danger.alert-dismissible.fade.show.mt-2.auto-hide(role='alert')
+          strong
+            | #{error_message}
+          button.close(type='button', data-dismiss='alert', alert-lable='Close')
+            span(aria-hidden='true') X

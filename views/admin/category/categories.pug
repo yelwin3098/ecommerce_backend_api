@@ -1,0 +1,65 @@
+extends ../../layouts/main
+block content
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        section.content-header
+         .container-fluid
+            .row.mb-2
+                .col-sm-6
+                    h1 Category List & Creation Form
+                .col-sm-6
+                    ol.breadcrumb.float-sm-right
+                        li.breadcrumb-item
+                            a(href='/admin/dashboard') Home
+                        li.breadcrumb-item.active Category Listing 
+        section.content
+            .row
+                // form start
+                .col-md-12
+                    // general form elements
+                    form(action='/admin/category_create', method='POST', role='form')
+                        .card.card-primary
+                            // /.card-header
+                            .card-body
+                                .form-group
+                                    label(for='exampleInputEmail1') Category Name
+                                    input#exampleInputEmail1.form-control(type='text', name='category_name', placeholder='Enter Product Title')
+                        .card.card-outline
+                            .card-header
+                                h3.card-title
+                                    | Product Description
+                                // tools box
+                                .card-tools
+                                    button.btn.btn-tool.btn-sm(type='button', data-card-widget='collapse', data-toggle='tooltip', title='Collapse')
+                                        i.fas.fa-minus
+                                    button.btn.btn-tool.btn-sm(type='button', data-card-widget='remove', data-toggle='tooltip', title='Remove')
+                                        i.fas.fa-times
+                                // /. tools
+                                // /.card-header
+                            .card-body.pad
+                                .mb-3
+                                    textarea.textarea(name='description',required, placeholder='Place some text here', style='width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;')
+
+                            .card-footer
+                                button.btn.btn-primary(type='submit') Submit
+                .col-12
+                    .card
+                        .card-body
+                            table#example1.table.table-bordered.table-striped
+                                thead
+                                    tr
+                                        th Category Name
+                                        th Action
+                                tbody
+                                    each category, i in categories
+                                        tr
+                                            td= category.name
+                                            td
+                                                a.btn.btn-sm.btn-danger.mr-2(href='/admin/category/delete/'+category._id)
+                                                    i.far.fa-trash-alt
+                                        
+                            // /.card-body
+
+
+    

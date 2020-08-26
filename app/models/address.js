@@ -3,7 +3,8 @@ const Schema = moongoose.Schema
 const addressSchema = new Schema({
     userId:{
         type:Schema.Types.ObjectId,
-        required:true
+        required:true,
+        ref:'User'
     },
     address:[{
         houseNo:{
@@ -23,7 +24,7 @@ const addressSchema = new Schema({
         type:Boolean,
         default:false
     }
-})
+},{ timestamps: {} })
 
 const Address = moongoose.model('Address',addressSchema)
 

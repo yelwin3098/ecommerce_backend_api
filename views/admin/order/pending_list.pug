@@ -1,0 +1,49 @@
+extends ../../layouts/main
+block content
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        section.content-header
+         .container-fluid
+            .row.mb-2
+                .col-sm-6
+                    h1 Orders
+                .col-sm-6
+                    ol.breadcrumb.float-sm-right
+                        li.breadcrumb-item
+                            a(href='/admin/dashboard') Home
+                        li.breadcrumb-item.active Peding List 
+        section.content
+            .row
+                .col-12
+                    .card
+                        .card-body
+                            table#example1.table.table-bordered.table-striped
+                                thead
+                                    tr
+                                        th Product Name
+                                        th User Name
+                                        th Phone No:
+                                        th Quantity
+                                        th Date
+                                        //- th 
+                                        //-     a.btn.btn-sm.btn-success.ml-4(href='/admin/product_create')
+                                        //-         i.fas.fa-plus
+                                tbody
+                                    each order, i in orders
+                                            tr
+                                                td #{order.productId.name}
+                                                td #{order.userId.username}
+                                                td #{order.userId.mobile}
+                                                td #{order.quantity}
+                                                td #{order.updatedAt.toISOString()}
+                                                //- td  
+                                                //-     a.btn.btn-sm.btn-warning.mr-2(href='/admin/product/edit/'+p._id)
+                                                //-         i.far.fa-edit
+                                                //-     a.btn.btn-sm.btn-danger.mr-2(href='/admin/product/delete/'+p._id)
+                                                //-         i.far.fa-trash-alt
+                                        
+                            // /.card-body
+
+
+    

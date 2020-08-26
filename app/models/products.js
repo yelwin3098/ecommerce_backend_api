@@ -56,7 +56,7 @@ const productSchema = new Schema({
 			}
 		}
 	]
-})
+},{ timestamps: {} })
 
 const Product = mongoose.model("Product", productSchema)
 

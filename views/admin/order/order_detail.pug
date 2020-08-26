@@ -1,0 +1,90 @@
+extends ../../layouts/main
+block content
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        section.content-header
+         .container-fluid
+            .row.mb-2
+                .col-sm-6
+                    h1 Orders Detail
+                .col-sm-6
+                    ol.breadcrumb.float-sm-right
+                        li.breadcrumb-item
+                            a(href='/admin/dashboard') Home
+                        li.breadcrumb-item
+                            a(href='/admin/order_accepted') Orders
+                        li.breadcrumb-item.active Order Detail
+        section.content
+            .row
+                .col-12
+                    .card
+                        .card-body
+                            table.table.table-bordered.table-striped
+                                thead
+                                    tr  
+                                        th #
+                                        th Product Name
+                                        th Product Category
+                                        th Price
+                                        th Quantity
+                                        th Amount
+                                tbody
+                                    each item, i in order.orderItem
+                                        tr  
+                                            td #{i + 1}
+                                            td #{item.productId.name}
+                                            td #{item.productId.categoryId.name}
+                                            td #{item.price}
+                                            td #{item.quantity}
+                                            td #{item.price * item.quantity}
+                                tfoot
+                                    tr  
+                                        td
+                                        td 
+                                        td 
+                                        td 
+                                        td 
+                                            b Total
+                                        td #{order.total}
+                                    
+                                
+            .row
+                .col-6
+                    .card
+                        .card-header.border-0
+                            h3.card-title Customer Information 
+                            
+                        .card-body.table-responsive.p-0
+                            table.table.table-striped.table-valign-middle
+                                thead
+                                    tr
+                                tbody
+                                    tr
+                                        td Name
+                                        td 
+                                        td 
+                                        td #{order.userId.username}
+                                    tr
+                                        td Phone
+                                        td 
+                                        td 
+                                        td #{order.userId.mobile}
+                                    tr
+                                        td Address
+                                        td 
+                                        td 
+                                        td #{order.addressId.address[0].houseNo}, #{order.addressId.address[0].street}
+                                    tr
+                                        td Deliver Phone
+                                        td 
+                                        td 
+                                        td #{order.userId.mobile}
+                                    tr
+                                        td Deliver Address
+                                        td 
+                                        td 
+                                        td #{order.addressId.address[0].houseNo}, #{order.addressId.address[0].street} 
+
+
+    

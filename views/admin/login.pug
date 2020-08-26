@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Admin| Login Page
+    // Tell the browser to be responsive to screen width
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Font Awesome
+    link(rel='stylesheet', href='/plugins/fontawesome-free/css/all.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // icheck bootstrap
+    link(rel='stylesheet', href='/plugins/icheck-bootstrap/icheck-bootstrap.min.css')
+    // Theme style
+    link(rel='stylesheet', href='/dist/css/adminlte.min.css')
+    // Google Font: Source Sans Pro
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700', rel='stylesheet')
+  body.hold-transition.register-page
+    //- include ../../layouts/messages
+    .register-box
+      .register-logo
+        a(href='../../index2.html')
+          b Admin
+      .card
+        //- .container
+          if success_message
+              .alert.alert-success.alert-dismissible.fade.show.mt-2.auto-hide(role='alert')
+                strong
+                  | #{success_message}
+                button.close(type='button', data-dismiss='alert', alert-lable='Close')
+                  span(aria-hidden='true') X
+          if error_message
+              .alert.alert-danger.alert-dismissible.fade.show.mt-2.auto-hide(role='alert')
+                strong
+                  | #{error_message}
+                button.close(type='button', data-dismiss='alert', alert-lable='Close')
+                  span(aria-hidden='true') X
+        .card-body.register-card-body
+          p.login-box-msg Sign in to start your session
+          form(action='/admin/login', method='post')
+            .input-group.mb-3
+              input.form-control(type='email',name="email", placeholder='Email')
+              .input-group-append
+                .input-group-text
+                  span.fas.fa-envelope
+            .input-group.mb-3
+              input.form-control(type='password',name="password", placeholder='Password')
+              .input-group-append
+                .input-group-text
+                  span.fas.fa-lock
+            .row
+              .col-4
+                button.btn.btn-primary.btn-block(type='submit') Login
+
+        
+    // jQuery
+    script(src='/plugins/jquery/jquery.min.js')
+    // Bootstrap 4
+    script(src='/plugins/bootstrap/js/bootstrap.bundle.min.js')
+    // AdminLTE App
+    script(src='/dist/js/adminlte.min.js')

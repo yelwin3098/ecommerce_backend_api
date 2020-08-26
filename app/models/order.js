@@ -27,7 +27,8 @@ const orderSchema = new Schema(
         orderItem:[{
             productId:{
                 type:Schema.Types.ObjectId,
-                required:true
+                required:true,
+                ref:'Product'
             },
             quantity:{
                 type:Number,
@@ -42,7 +43,7 @@ const orderSchema = new Schema(
             type:String,
             default:'Dispatched'
         }
-    }
+    },{ timestamps: {} }
 )
 
 const Order = mongoose.model('Order',orderSchema)

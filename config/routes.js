@@ -48,4 +48,5 @@ router.post('/account',authenticate,address.create)
 router.get('/account',authenticate,address.read)
 router.put('/account',authenticate,address.update)
 router.delete('/account',authenticate,address.destroy)
+
 module.exports = router
